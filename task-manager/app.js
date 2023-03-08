@@ -1,4 +1,5 @@
 console.log('Task Manager App')
+require('./db/connect')
 
 const express = require('express');
 const app = express();

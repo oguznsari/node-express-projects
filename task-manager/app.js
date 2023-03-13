@@ -12,7 +12,7 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 app.use(express.static('./public'))
 app.use(express.json())
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Routes
 

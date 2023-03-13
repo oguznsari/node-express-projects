@@ -2,6 +2,7 @@
 # [Node.js / Express Course - Build 4 Projects => freeCodeCamp: YouTube](https://www.youtube.com/watch?v=qwfE7fSVaZM)
 
 1. Task Manager
+    - .env should be created at the ROOT directory of the project
 2. Store API
 3. JWT Basics
 4. Jobs API

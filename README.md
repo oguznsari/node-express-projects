@@ -4,5 +4,6 @@
 1. Task Manager
     - .env should be created at the ROOT directory of the project
 2. Store API
+    - products controller mongoDB numericFilter logic is nice code snippet
 3. JWT Basics
 4. Jobs API

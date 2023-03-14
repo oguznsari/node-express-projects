@@ -11,6 +11,7 @@
         - jwt.verify()
 4. Jobs API
 
-.env
-    - MONGO_URI
-    - JWT_SECRET
+[.env]
+
+- MONGO_URI
+- JWT_SECRET

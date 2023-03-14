@@ -44,6 +44,7 @@ formDOM.addEventListener('submit', async (e) => {
 btnDOM.addEventListener('click', async () => {
   const token = localStorage.getItem('token')
   try {
+    // jwt - created in login, stored in localStorage and used here as Bearer token
     const { data } = await axios.get('/api/v1/dashboard', {
       headers: {
         Authorization: `Bearer ${token}`,

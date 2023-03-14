@@ -6,4 +6,11 @@
 2. Store API
     - products controller mongoDB numericFilter logic is nice code snippet
 3. JWT Basics
+    - auth middleware
+        - jwt.sign()
+        - jwt.verify()
 4. Jobs API
+
+.env
+    - MONGO_URI
+    - JWT_SECRET

@@ -17,4 +17,4 @@
 [.env]
 
 - MONGO_URI
-- JWT_SECRET
+- JWT_SECRET [All keys generator -> To create more secure keys](https://www.allkeysgenerator.com/)

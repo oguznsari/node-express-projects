@@ -10,6 +10,9 @@
         - jwt.sign()
         - jwt.verify()
 4. Jobs API
+    - authentication
+        - bcrypt.genSalt(10)            // 10 is default - safe enough
+        - bcrypt.hash(password, salt)
 
 [.env]
 

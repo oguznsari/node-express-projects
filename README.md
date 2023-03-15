@@ -18,3 +18,4 @@
 
 - MONGO_URI
 - JWT_SECRET [All keys generator -> To create more secure keys](https://www.allkeysgenerator.com/)
+- JWT_LIFETIME

@@ -72,3 +72,11 @@ Swagger UI
 #### Deployment sites
 - [Heroku](https://www.heroku.com/)
 - [Digital Ocean](https://www.digitalocean.com/)
+
+#### API Documentation
+1. Postman export.json
+2. [Apimatic import & configure](https://www.apimatic.io/)
+    - export yaml
+3. Serve it on a path by taking advantage of following packages
+    - swagger-ui-express
+    - yamljs

@@ -48,7 +48,7 @@ Email Validation Regex
 - Duplicate (Email)
 - Cast Error
 
-#### Security
+#### Security packages
 
 - helmet
 - cors
@@ -67,3 +67,8 @@ Swagger UI
       required: true
       description: the job id
 ```
+
+
+#### Deployment sites
+- [Heroku](https://www.heroku.com/)
+- [Digital Ocean](https://www.digitalocean.com/)

@@ -1,6 +1,7 @@
 const { checkPrimeSync } = require('crypto');
 const { readFile, writeFile } = require('fs');
 
+console.log('Starting the async task.')
 readFile('./content/first.txt', 'utf8', (err, result) => {
     if (err) {
         console.log({ err })
@@ -20,9 +21,12 @@ readFile('./content/first.txt', 'utf8', (err, result) => {
                 console.log({ err })
                 return
             }
+            console.log('Task completed.')
             console.log({ result })
         })
     })
 })
+
+console.log('After the task.')
 
 // Callback hell

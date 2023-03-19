@@ -12,6 +12,22 @@ const getText = (path) => {
     })
 }
 
+/* 
 getText('./content/first.txt')
     .then((result) => console.log({ result }))
     .catch((err) => console.log({ err }))
+*/
+
+
+// async - await approach -> wrap code with Try/Catch
+const start = async () => {
+    try {
+        const first = await getText('./content/first.txt')
+        const second = await getText('./content/second.txt')
+        console.log({ first, second })
+    } catch (error) {
+        console.log({ error })
+    }
+}
+
+start();

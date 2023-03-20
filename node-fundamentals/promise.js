@@ -1,5 +1,9 @@
-const { readFile } = require('fs');
+const { readFile, writeFile } = require('fs');
+const util = require('util');
+const readFilePromise = util.promisify(readFile);
+const writeFilePromise = util.promisify(writeFile);
 
+/*
 const getText = (path) => {
     return new Promise((resolve, reject) => {
         readFile(path, 'utf8', (err, data) => {
@@ -11,6 +15,7 @@ const getText = (path) => {
         })
     })
 }
+*/
 
 /* 
 getText('./content/first.txt')
@@ -22,9 +27,10 @@ getText('./content/first.txt')
 // async - await approach -> wrap code with Try/Catch
 const start = async () => {
     try {
-        const first = await getText('./content/first.txt')
-        const second = await getText('./content/second.txt')
+        const first = await readFilePromise('./content/first.txt', 'utf8')
+        const second = await readFilePromise('./content/second.txt', 'utf8')
         console.log({ first, second })
+        await writeFilePromise('./content/promisify-output.txt', `This is awasome: \n ${first} \n ${second} \n`, { flag: 'a' })
     } catch (error) {
         console.log({ error })
     }

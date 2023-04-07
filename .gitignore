@@ -7,3 +7,5 @@
 /07-file-upload/.env
 /08-send-email/node_modules/
 /08-send-email/.env
+/09-stripe-payment/node_modules/
+/09-stripe-payment/.env

@@ -7,10 +7,13 @@ require('express-async-errors');
 const express = require('express');
 const app = express();
 
+// rest of the packages
+const morgan = require('morgan')
 
-const port = process.env.PORT || 5000;
 // database
 const connectDB = require('./db/connect');
+
+app.use(morgan('tiny'))
 // need to access json value in req.body
 app.use(express.json());
 // middleware
@@ -26,6 +29,7 @@ app.use(notFoundMiddleware);
 // should be at the end by express rules because errors you throw above will be catched here.
 app.use(errorHandlerMiddleware);
 
+const port = process.env.PORT || 5000;
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI)

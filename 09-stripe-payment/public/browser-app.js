@@ -5,8 +5,9 @@ const purchase = [
 const total_amount = 10998;
 const shipping_fee = 1099;
 
+// your public key from stripe
 var stripe = Stripe(
-  'pk_test_51I87djFp5pnuKUXgBVIHiR36vVAWyfuyb7ckrhgyDNA1kM0GWHas9ZGUAgwJSFNUxrbyE6NwlMNmls1iGSfzHDdE00DQB3y6AH'
+  'pk_test_51MuF2nKaHPAiLEXLQSmUJttN6ANAfr5jsqWlOm2jUdmVCeCieEkyImRRiOI99aQRHcg5FJhWu2Cq4hhFAaITA2Rm00vE52cb2U'
 );
 
 // The items the customer wants to buy

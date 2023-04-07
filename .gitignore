@@ -9,3 +9,5 @@
 /08-send-email/.env
 /09-stripe-payment/node_modules/
 /09-stripe-payment/.env
+/10-e-commerce-api/node_modules/
+/10-e-commerce-api/.env

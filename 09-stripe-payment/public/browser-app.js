@@ -4,6 +4,7 @@ const purchase = [
 ];
 const total_amount = 10998;
 const shipping_fee = 1099;
+// stripe talks in cents thats why ==> 1999 = $19.99
 
 // your public key from stripe
 var stripe = Stripe(

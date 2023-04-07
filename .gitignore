@@ -5,3 +5,5 @@
 /06.5-jobster-api/.env
 /07-file-upload/node_modules/
 /07-file-upload/.env
+/08-send-email/node_modules/
+/08-send-email/.env

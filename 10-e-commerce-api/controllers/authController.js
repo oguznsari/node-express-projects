@@ -19,6 +19,14 @@ const register = async (req, res) => {
     const tokenUser = { name: user.name, userId: user._id, role: user.role }
     const token = createJWT({ payload: tokenUser })
 
+    // matches with JWT expires in
+    const oneDay = 1000 * 60 * 60 * 24;
+
+    res.cookie('token', token, {
+        httpOnly: true,
+        expires: new Date(Date.now() + oneDay)
+    })
+
     res.status(StatusCodes.ACCEPTED).json({ user: tokenUser, token })
 }
 

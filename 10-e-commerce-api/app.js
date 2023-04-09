@@ -8,7 +8,8 @@ const express = require('express');
 const app = express();
 
 // rest of the packages
-const morgan = require('morgan')
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 
 // database
 const connectDB = require('./db/connect');
@@ -19,6 +20,8 @@ const authRouter = require('./routes/authRoutes')
 app.use(morgan('tiny'))
 // need to access json value in req.body
 app.use(express.json());
+app.use(cookieParser());
+
 // middleware
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')

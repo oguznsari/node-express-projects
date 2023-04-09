@@ -20,7 +20,7 @@ const authRouter = require('./routes/authRoutes')
 app.use(morgan('tiny'))
 // need to access json value in req.body
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser(process.env.JWT_SECRET));
 
 // middleware
 const notFoundMiddleware = require('./middleware/not-found')

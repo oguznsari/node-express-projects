@@ -13,6 +13,9 @@ const morgan = require('morgan')
 // database
 const connectDB = require('./db/connect');
 
+// routes
+const authRouter = require('./routes/authRoutes')
+
 app.use(morgan('tiny'))
 // need to access json value in req.body
 app.use(express.json());
@@ -23,6 +26,8 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 app.get('/', (req, res) => {
     res.send('e-commerce api');
 })
+
+app.use('/api/v1/auth', authRouter)
 
 // should be set after all routes which makes sense
 app.use(notFoundMiddleware);

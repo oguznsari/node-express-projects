@@ -10,6 +10,7 @@ const app = express();
 // rest of the packages
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 // database
 const connectDB = require('./db/connect');
@@ -21,6 +22,7 @@ app.use(morgan('tiny'))
 // need to access json value in req.body
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
+app.use(cors());
 
 // middleware
 const notFoundMiddleware = require('./middleware/not-found')

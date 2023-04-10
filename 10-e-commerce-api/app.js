@@ -16,7 +16,8 @@ const cors = require('cors');
 const connectDB = require('./db/connect');
 
 // routes
-const authRouter = require('./routes/authRoutes')
+const authRouter = require('./routes/authRoutes');
+const userRouter = require('./routes/userRoutes');
 
 app.use(morgan('tiny'))
 // need to access json value in req.body
@@ -32,7 +33,8 @@ app.get('/', (req, res) => {
     res.send('e-commerce api');
 })
 
-app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/users', userRouter);
 
 // should be set after all routes which makes sense
 app.use(notFoundMiddleware);

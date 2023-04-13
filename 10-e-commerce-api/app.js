@@ -18,6 +18,7 @@ const connectDB = require('./db/connect');
 // routes
 const authRouter = require('./routes/authRoutes');
 const userRouter = require('./routes/userRoutes');
+const productRouter = require('./routes/productRoutes');
 
 app.use(morgan('tiny'))
 // need to access json value in req.body
@@ -35,6 +36,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/products', productRouter);
 
 // should be set after all routes which makes sense
 app.use(notFoundMiddleware);

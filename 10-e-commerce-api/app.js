@@ -11,6 +11,7 @@ const app = express();
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const fileUpload = require('express-fileupload');
 
 // database
 const connectDB = require('./db/connect');
@@ -25,6 +26,8 @@ app.use(morgan('tiny'))
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use(cors());
+app.use(express.static('./public'));
+app.use(fileUpload());
 
 // middleware
 const notFoundMiddleware = require('./middleware/not-found')

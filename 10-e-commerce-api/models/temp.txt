@@ -1,0 +1,15 @@
+// mongoDB Atlas aggregation generator
+/**
+ * _id: The id of the group.
+ * fieldN: The first field name.
+ */
+
+{
+    _id: "$product",
+    averageRating: {
+      $avg: "$rating",
+  },
+    numOfReviews: {
+      $sum: 1,
+  },
+}

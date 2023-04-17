@@ -11,3 +11,5 @@
 /09-stripe-payment/.env
 /10-e-commerce-api/node_modules/
 /10-e-commerce-api/.env
+/11-auth-workflow/server/node_modules/
+/11-auth-workflow/server/.env

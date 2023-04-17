@@ -59,8 +59,26 @@ const logout = async (req, res) => {
   res.status(StatusCodes.OK).json({ msg: 'user logged out!' });
 };
 
+const verifyEmail = async (req, res) => {
+  const { email, verificationToken } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (!user || (verificationToken !== user.verificationToken)) {
+    throw new CustomError.UnauthenticatedError(`Verification failed.`);
+  }
+
+  user.isVerified = true;
+  user.verified = Date.now();
+  user.verificationToken = '';
+
+  await user.save();
+  res.status(StatusCodes.OK).json({ msg: 'Email verified.' });
+}
+
 module.exports = {
   register,
   login,
   logout,
+  verifyEmail
 };

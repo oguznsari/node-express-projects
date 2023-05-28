@@ -2,7 +2,7 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-empty-function */
 
-const { MongoClient } = require("mongodb");
+const mongoose = require("mongoose");
 
 const CoinAPI = require('../CoinAPI');
 
@@ -16,17 +16,15 @@ class MongoBackend {
   }
 
   async connect() {
-    console.log({ url: this.mongoUrl })
-    const mongoClient = new MongoClient(
-      this.mongoUrl,
-      { useUnifiedTopology: true, useNewUrlParser: true });
-
-    this.client = mongoClient.connect();
-    this.collection = this.client.db("maxcoin").collection("values");
-    return this.client;
+    return mongoose.connect(this.mongoUrl, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
   }
 
-  async disconnect() { }
+  async disconnect() {
+    return mongoose.connection.close();
+  }
 
   async insert() { }
 
@@ -35,14 +33,13 @@ class MongoBackend {
   async max() {
     console.info("Connection to MongoDB");
     console.time("mongodb-connect");
-    const client = await this.connect();
-    if (client.isConnected()) {
-      console.info("Successfully connected to MongoDB")
-    } else {
-      throw new Error("Connecting to MongoDB failed")
-    }
-
+    await this.connect();
     console.timeEnd("mongodb-connect");
+
+    console.info("Disconnecting from MongoDB");
+    console.time("mongodb-disconnect");
+    await this.disconnect();
+    console.timeEnd("mongodb-disconnect");
   }
 }
 

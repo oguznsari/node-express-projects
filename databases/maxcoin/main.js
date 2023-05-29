@@ -1,5 +1,6 @@
 const MongoBackend = require("./services/backend/MongoBackend");
 const RedisBackend = require("./services/backend/RedisBackend");
+const MySQLBackend = require("./services/backend/MySQLBackend");
 
 require("dotenv").config();
 
@@ -13,7 +14,12 @@ async function runRedis() {
   return redisBackend.max();
 }
 
-runRedis()
+async function runMySQL() {
+  const mySQLBackend = new MySQLBackend();
+  return mySQLBackend.max();
+}
+
+runMySQL()
   .then((result) => {
     console.log(result);
   })

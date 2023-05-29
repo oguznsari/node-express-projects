@@ -87,17 +87,13 @@ module.exports = () => {
     return res.redirect("/admin/user");
   });
 
-  router.get("/impersonate/:userId", (req, res, next) => {
-    return next("Not implemented");
-
-    /*
+  router.get("/impersonate/:userId", (req, res) => {
     req.session.userId = req.params.userId;
     req.session.messages.push({
       type: "success",
       text: "User successfully switched",
     });
     return res.redirect("/admin/user");
-    */
   });
 
   return router;
